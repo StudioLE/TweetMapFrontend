@@ -1,0 +1,28 @@
+<div class="main">
+  <div class="container">
+    <h1>{{ criteria().city.name }}</h1>
+
+    <span ng-repeat-start="(key, value) in criteria().types" ng-if="value"
+      class="label label-default">{{ key }}</span> <span ng-repeat-end></span>
+
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th style="width: 60%;">text</th>
+        <th style="width: 20%;">user</th>
+        <th style="width: 20%;">Coords</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="(key, tweet) in tweets()">
+        <td>{{ tweet.text }}</td>
+        <td>{{ tweet.user.screen_name }}</td>
+        <td ng-if="tweet.geo">{{ tweet.geo.coordinates[0] }}, {{ tweet.geo.coordinates[1] }}</td>
+        <td ng-if=" ! tweet.geo"></td>
+      </tr>
+      </tbody>
+    </table>
+  </div> <!-- .container -->
+</div> <!-- .main -->
+
+

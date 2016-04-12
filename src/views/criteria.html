@@ -1,0 +1,45 @@
+<div class="main">
+  <div class="container">
+    <form class="form-horizontal" name="form">
+      <div class="form-group">
+        <label for="" class="col-sm-3 control-label">City</label>
+        <div class="col-sm-7">
+          <input type="text" class="form-control"
+            placeholder="City name"
+            required
+            g-places-autocomplete
+            options="autocompleteOptions"
+            ng-model="criteria().city">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="" class="col-sm-3 control-label">Search Query</label>
+        <div class="col-sm-7">
+          <input type="text" class="form-control"
+            placeholder="museum, gallery, etc."
+            required
+            ng-model="criteria().query">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="" class="col-sm-3 control-label">Radius</label>
+        <div class="col-sm-7">
+          <input type="text" class="form-control"
+            placeholder="Max distance for connection in metres"
+            required
+            ng-model="criteria().radius">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-7">
+          <button type="submit" class="btn btn-primary"
+            ng-disabled="form.$invalid"
+            ng-click="saveCriteria()">Compute</button>
+        </div>
+      </div>
+    </form>
+  </div> <!-- .container -->
+</div> <!-- .main -->
