@@ -3,13 +3,13 @@
 Clone the repository
 
 ```
-git clone https://gitlab.com/StudioLE/CityGraph.git CityGraph
+git clone https://gitlab.com/StudioLE/TweetMapFrontend.git TweetMap/frontend
 ```
 
 Enter the directory and install the dependencies. For this step you'll need to have [Node.js](https://nodejs.org/) and [bower](http://bower.io/) installed.
 
 ```
-cd CityGraph
+cd TweetMap/frontend
 npm install
 ```
 

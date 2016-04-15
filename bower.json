@@ -1,8 +1,8 @@
 {
-  "name": "citygraph",
-  "description": "Graphing the City",
-  "version": "0.0.1-3",
-  "homepage": "https://github.com/StudioLE/CityGraph",
+  "name": "tweetmap",
+  "description": "TweetMap - Mapping Culture",
+  "version": "0.0.1-1",
+  "homepage": "https://github.com/StudioLE/TweetMapFrontend",
   "license": "",
   "private": true,
   "dependencies": {

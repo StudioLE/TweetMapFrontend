@@ -23,11 +23,6 @@ angular.module('nav', [])
       url: '#/map',
       title: 'Map',
       icon: 'fa-map'
-    },
-    {
-      url: '#/graph',
-      title: 'Graph',
-      icon: 'fa-link'
     }
   ]
 

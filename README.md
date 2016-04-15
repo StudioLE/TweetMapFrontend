@@ -1,6 +1,6 @@
-# CityGraph
+# TweetMap
 
-Find the app at [http://citygraph.studiole.uk](http://citygraph.studiole.uk)
+Find the app at [http://tweetmap.studiole.uk](http://tweetmap.studiole.uk)
 
 ## Source
 

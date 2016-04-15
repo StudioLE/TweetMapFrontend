@@ -16,7 +16,6 @@ angular.module('app', [
   'app.criteria',
   'app.compute',
   'app.schedule',
-  'app.graph',
   'app.map',
   'app.raw',
   'app.dataFactory',
