@@ -29,6 +29,24 @@ angular.module('app.compute', ['ngRoute'])
 
   $scope.status = 'Computing'
 
+  function assignColour(term) {
+    if(term == 'museum') {
+      return 'green'
+    }
+    else if(term == 'art' || term == 'gallery') {
+      return 'blue'
+    }
+    else if(term == 'theatre' || term == 'musical' || term == 'opera') {
+      return 'yellow'
+    }
+    else if(term == 'gig' || term == 'music') {
+      return 'red'
+    }
+    else {
+      return 'black'
+    }
+  }
+
   console.log(criteria.terms)
 
   async.eachSeries(criteria.terms, function(term, callback) {
@@ -43,7 +61,7 @@ angular.module('app.compute', ['ngRoute'])
 
       tweets.push({
         term: term.text,
-        colour: 'black',
+        colour: assignColour(term.text),
         tweets: response.data
       })
 
