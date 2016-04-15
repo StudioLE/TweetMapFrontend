@@ -33,12 +33,12 @@ angular.module('app.tweetFactory', [])
      *
      * @return {Array} events
      */
-    add: function(data) {
+    add: function(append) {
       var data = []
       if(this.isset()) {
-        data = data.concat(this.get())
+        data = this.get()
       }
-      data.push(data)
+      data.push(append)
       return localStorageService.set('tweet', data)
     },
 

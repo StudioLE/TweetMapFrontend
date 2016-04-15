@@ -58,10 +58,10 @@ angular.module('app.schedule', ['ngRoute'])
    *
    * Called when a x-editable is saved
    */
-  // $scope.save = function() {
-  //   data.schedule = $scope.schedule()
-  //   Data.set(data)
-  // }
+  $scope.save = function() {
+    tweets = $scope.tweets()
+    Tweet.set(tweets)
+  }
 
   /**
    * Remove row

@@ -10,6 +10,8 @@ angular.module('app', [
   'ngResource',
   'LocalStorageModule',
   'google.places',
+  'ngTagsInput',
+  'xeditable',
   'nav',
   'app.config',
   'app.static',

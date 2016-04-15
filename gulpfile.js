@@ -107,6 +107,8 @@ gulp.task('vendor-css', function() {
     'src/bower_components/font-awesome/css/font-awesome.min.css',
     'src/bower_components/json-formatter/dist/json-formatter.min.css',
     'src/bower_components/angular-google-places-autocomplete/src/autocomplete.css',
+    'src/bower_components/ng-tags-input/ng-tags-input.min.css',
+    'src/bower_components/angular-xeditable/dist/css/xeditable.css',
     'src/css/colors.css'
   ])
   .pipe(gp_concat('concat.js'))
@@ -146,7 +148,10 @@ gulp.task('vendor-js', function() {
     'src/bower_components/angular-resource/angular-resource.min.js',
     'src/bower_components/angular-local-storage/dist/angular-local-storage.min.js',
     'src/bower_components/json-formatter/dist/json-formatter.min.js',
-    'src/bower_components/angular-google-places-autocomplete/src/autocomplete.js'
+    'src/bower_components/angular-google-places-autocomplete/src/autocomplete.js',
+    'src/bower_components/ng-tags-input/ng-tags-input.min.js',
+    'src/bower_components/angular-xeditable/dist/js/xeditable.js'
+
   ])
   .pipe(gp_concat('concat.js'))
   .pipe(gp_rename('vendor.js'))

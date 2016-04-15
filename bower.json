@@ -25,6 +25,8 @@
     "jquery": "~2.1.4",
     "less": "~2.5.3",
     "lodash": "~3.10.1",
-    "overpass": "*"
+    "overpass": "*",
+    "ng-tags-input": "^3.0.0",
+    "angular-xeditable": "^0.1.12"
   }
 }

@@ -87,41 +87,43 @@ angular.module('app.map', ['ngRoute'])
 
   var infowindow = new google.maps.InfoWindow()
 
-  _.each(tweets, function(tweet) {
-    if(tweet.geo) {
-      var marker = new google.maps.Marker({
-        map: map,
-        position: {
-          lat: tweet.geo.coordinates[0],
-          lng: tweet.geo.coordinates[1]
-        },
-        icon: {
-          path: google.maps.SymbolPath.CIRCLE,
-          scale: 5,
-          fillOpacity: 0.5,
-          fillColor: '#000',
-          strokeOpacity: 0
-        }
-      })
-
-      google.maps.event.addListener(marker, 'click', function() {
-        var self = this
-        $http({
-          method: 'GET',
-          url: 'http://localhost:4730/embed/' + tweet.id_str
-        }).then(function successCallback(response) {
-          // this callback will be called asynchronously
-          // when the response is available
-          // console.log(response)
-          infowindow.setContent(response.data.html)
-          infowindow.open(map, self)
-        }, function errorCallback(response) {
-          // called asynchronously if an error occurs
-          // or server returns response with an error status.
-          console.error(response)
+  _.each(tweets, function(term) {
+    _.each(term.tweets, function(tweet) {
+      if(tweet.geo) {
+        var marker = new google.maps.Marker({
+          map: map,
+          position: {
+            lat: tweet.geo.coordinates[0],
+            lng: tweet.geo.coordinates[1]
+          },
+          icon: {
+            path: google.maps.SymbolPath.CIRCLE,
+            scale: 5,
+            fillOpacity: 0.5,
+            fillColor: term.colour || '#000',
+            strokeOpacity: 0
+          }
         })
-      })
-    }
+
+        google.maps.event.addListener(marker, 'click', function() {
+          var self = this
+          $http({
+            method: 'GET',
+            url: 'http://localhost:4730/embed/' + tweet.id_str
+          }).then(function successCallback(response) {
+            // this callback will be called asynchronously
+            // when the response is available
+            // console.log(response)
+            infowindow.setContent(response.data.html)
+            infowindow.open(map, self)
+          }, function errorCallback(response) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+            console.error(response)
+          })
+        })
+      }
+    })
   })
 
 })

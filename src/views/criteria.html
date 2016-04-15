@@ -13,13 +13,20 @@
         </div>
       </div>
 
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label for="" class="col-sm-3 control-label">Search Query</label>
         <div class="col-sm-7">
           <input type="text" class="form-control"
             placeholder="museum, gallery, etc."
             required
             ng-model="criteria().query">
+        </div>
+      </div> -->
+
+      <div class="form-group">
+        <label for="" class="col-sm-3 control-label">Search Terms</label>
+        <div class="col-sm-7">
+          <tags-input class="form-control" ng-model="criteria().terms"></tags-input>
         </div>
       </div>
 
