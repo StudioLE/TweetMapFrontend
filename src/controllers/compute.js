@@ -36,8 +36,8 @@ angular.module('app.compute', ['ngRoute'])
     else if(term == 'art' || term == 'gallery') {
       return 'blue'
     }
-    else if(term == 'theatre' || term == 'musical' || term == 'opera') {
-      return 'yellow'
+    else if(term == 'theatre' || term == 'theater' || term == 'musical' || term == 'opera') {
+      return 'purple'
     }
     else if(term == 'gig' || term == 'music') {
       return 'red'
