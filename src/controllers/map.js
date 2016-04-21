@@ -92,9 +92,16 @@ angular.module('app.map', ['ngRoute'])
       name: 'Custom Style'
   })
 
+  var default_params = {
+    zoom: 13,
+    marker: 3
+    // zoom: 12,
+    // marker: 2
+  }
+
   var map = new google.maps.Map(document.getElementById('map'), {
     center: criteria.city.geometry.location,
-    zoom: 13,
+    zoom: default_params.zoom,
     streetViewControl: false,
     mapTypeControl: false,
     // mapTypeControlOptions: {
@@ -118,7 +125,8 @@ angular.module('app.map', ['ngRoute'])
           },
           icon: {
             path: google.maps.SymbolPath.CIRCLE,
-            scale: 5,
+            // scale: 5,
+            scale: default_params.marker,
             fillOpacity: 0.5,
             fillColor: colours[term.colour] || '#000',
             strokeOpacity: 0
