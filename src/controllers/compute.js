@@ -39,11 +39,17 @@ angular.module('app.compute', ['ngRoute'])
     else if(term == 'theatre' || term == 'theater' || term == 'musical' || term == 'opera') {
       return 'purple'
     }
-    else if(term == 'gig' || term == 'music') {
+    else if(term == 'cinema') {
+      return 'black'
+    }
+    else if(term == 'gig' || term == 'music' || term == 'concert') {
       return 'red'
     }
+    else if(term == 'club' || term == 'bar' || term == 'cafe' || term == 'restaurant' || term == 'pub') {
+      return 'orange'
+    }
     else {
-      return 'black'
+      return 'yellow'
     }
   }
 

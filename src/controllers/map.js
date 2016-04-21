@@ -93,10 +93,12 @@ angular.module('app.map', ['ngRoute'])
   })
 
   var default_params = {
-    zoom: 13,
-    marker: 3
-    // zoom: 12,
+    // zoom: 13,
     // marker: 2
+    zoom: 12,
+    marker: 2
+    // zoom: 14,
+    // marker: 3
   }
 
   var map = new google.maps.Map(document.getElementById('map'), {
