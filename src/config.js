@@ -8,9 +8,10 @@ angular.module('app.config', [])
 *
 ******************************************************************/
 .constant('Config', {
-  app_url: 'http://localhost:1337',
+  app_url: 'http://tweetmap.studiole.uk',
   place_api_endpoint: 'https://maps.googleapis.com/maps/api/place/nearbysearch/json',
   place_api_key: 'AIzaSyClYM73nng_qK5MdY2mvVYcafxNESu4RIQ',
+  twitter_api_endpoint: 'http://api.tweetmap.studiole.uk',
   graph: {
     width: 500,
     height: 500,
@@ -21,5 +22,10 @@ angular.module('app.config', [])
   endpoint: function(req) {
     return this.endpoint_url + req + '/json' 
     // ?key=AIzaSyClYM73nng_qK5MdY2mvVYcafxNESu4RIQ&location=55,-1.6&radius=10000&type=train_station&rankby=prominence
-  }
+  },
+  twitter_api: function(req) {
+    return this.twitter_api_endpoint + req 
+    // ?key=AIzaSyClYM73nng_qK5MdY2mvVYcafxNESu4RIQ&location=55,-1.6&radius=10000&type=train_station&rankby=prominence
+  },
+
 })

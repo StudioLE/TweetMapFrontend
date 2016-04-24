@@ -19,7 +19,7 @@ angular.module('app.compute', ['ngRoute'])
 * ComputeCtrl controller
 *
 ******************************************************************/
-.controller('ComputeCtrl', function($scope, $http, $location, Criteria, Place, Tweet, Calc) {
+.controller('ComputeCtrl', function($scope, $http, $location, Config, Criteria, Place, Tweet, Calc) {
 
   /**
    * Get data from local storage
@@ -53,17 +53,13 @@ angular.module('app.compute', ['ngRoute'])
     }
   }
 
-  console.log(criteria.terms)
-
   async.eachSeries(criteria.terms, function(term, callback) {
     $http({
       method: 'GET',
-      url: 'http://localhost:4730/tweets/' + term.text + '/' + criteria.city.geometry.location.lat + ',' + criteria.city.geometry.location.lng + ',' + criteria.radius + 'km'
-      // url: 'http://localhost:4730/tweets/museum/51.507222,-0.1275,50km'
+      url: Config.twitter_api('/tweets/' + term.text + '/' + criteria.city.geometry.location.lat + ',' + criteria.city.geometry.location.lng + ',' + criteria.radius + 'km')
     }).then(function successCallback(response) {
       // this callback will be called asynchronously
       // when the response is available
-      console.log(response)
 
       tweets.push({
         term: term.text,
@@ -76,7 +72,6 @@ angular.module('app.compute', ['ngRoute'])
     }, function errorCallback(response) {
       // called asynchronously if an error occurs
       // or server returns response with an error status.
-      console.log(response)
 
       callback(response)
     })
@@ -87,8 +82,6 @@ angular.module('app.compute', ['ngRoute'])
 
     $scope.status = 'Computation complete'
     $location.path('/schedule')
-    // $scope.$apply()
-    // window.location.href = '/#/schedule'
 
   })
 
