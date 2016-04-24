@@ -76,7 +76,18 @@ angular.module('app.compute', ['ngRoute'])
       callback(response)
     })
   }, function(err) {
-    if(err) console.error(err)
+    if(err) {
+      if(err.status == 429) {
+        $scope.status = 'Error: Rate Limit Reached. Wait 15 minutes and try again' 
+      }
+      else if(err.status == 400 && err.data[0].code == 215) {
+        $scope.status = 'Error: ' + err.data[0].message 
+      }
+      else {
+        $scope.status = 'Error' + "\n\n" + JSON.stringify(err)
+      }
+      return console.error(err)
+    }
 
     Tweet.set(tweets)
 
