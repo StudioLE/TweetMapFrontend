@@ -136,7 +136,7 @@ gulp.task('vendor-js', function() {
   gulp.src([
     'src/bower_components/jquery/dist/jquery.min.js',
     'src/bower_components/bootstrap/dist/js/bootstrap.min.js',
-    'src/bower_components/lodash/lodash.min.js',
+    'src/bower_components/lodash/dist/lodash.min.js',
     'src/bower_components/async/dist/async.min.js',
     'src/bower_components/angular/angular.min.js',
     'src/bower_components/angular-route/angular-route.min.js',
