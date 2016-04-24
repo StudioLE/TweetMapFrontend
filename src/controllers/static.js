@@ -4,7 +4,6 @@ angular.module('app.static', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/', {
-    // redirectTo: '/import'
     templateUrl: 'views/home.html',
     controller: 'HomeCtrl'
   })
