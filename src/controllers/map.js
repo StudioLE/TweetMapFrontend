@@ -19,7 +19,7 @@ angular.module('app.map', ['ngRoute'])
 * MapCtrl controlller
 *
 ******************************************************************/
-.controller('MapCtrl', function($scope, $http, Criteria, Tweet, Calc) {
+.controller('MapCtrl', function($scope, $http, Config, Criteria, Tweet, Calc) {
 
   /**
    * Get data from local storage
@@ -139,7 +139,7 @@ angular.module('app.map', ['ngRoute'])
           var self = this
           $http({
             method: 'GET',
-            url: 'http://localhost:4730/embed/' + tweet.id_str
+            url: Config.twitter_api('/embed/' + tweet.id_str)
           }).then(function successCallback(response) {
             // this callback will be called asynchronously
             // when the response is available
