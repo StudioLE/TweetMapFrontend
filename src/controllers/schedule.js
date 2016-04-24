@@ -35,25 +35,6 @@ angular.module('app.schedule', ['ngRoute'])
   }
 
   /**
-   * Adjacent spaces
-   *
-   * Return spaces adjacent to key
-   */
-  // $scope.adjacent = function(key) {
-  //   var adjacent = []
-
-  //   _.each(data.adjacencies, function(edge) {
-  //     if(edge.source == key) {
-  //       adjacent.push(edge.target)
-  //     }
-  //     else if(edge.target == key) {
-  //       adjacent.push(edge.source)
-  //     }
-  //   })
-  //   return adjacent
-  // }
-
-  /**
    * Update data model
    *
    * Called when a x-editable is saved
@@ -62,17 +43,6 @@ angular.module('app.schedule', ['ngRoute'])
     tweets = $scope.tweets()
     Tweet.set(tweets)
   }
-
-  /**
-   * Remove row
-   *
-   * Called when a x-editable is saved
-   */
-  // $scope.removeRow = function(row) {
-  //   // Toggle remove
-  //   // row.removed = ! row.removed
-  //   // Data.set($scope.data())
-  // }
 
   $scope.colours = [
     'navy',
