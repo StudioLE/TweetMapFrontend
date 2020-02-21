@@ -8,10 +8,10 @@ angular.module('app.config', [])
 *
 ******************************************************************/
 .constant('Config', {
-  app_url: 'http://tweetmap.studiole.uk',
+  app_url: '//tweetmap.studiole.uk',
   place_api_endpoint: 'https://maps.googleapis.com/maps/api/place/nearbysearch/json',
   place_api_key: 'AIzaSyClYM73nng_qK5MdY2mvVYcafxNESu4RIQ',
-  twitter_api_endpoint: 'http://api.tweetmap.studiole.uk',
+  twitter_api_endpoint: '//tweetmapapi.studiole.uk',
   graph: {
     width: 500,
     height: 500,
@@ -29,3 +29,4 @@ angular.module('app.config', [])
   },
 
 })
+
